@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DELMA ENGINEERING - Équipements industriels pour la fabrication de frites fraîches et précuites. Lignes complètes clé en main pour professionnels.">
+    <meta name="keywords" content="équipement frites, coupe-frites, ligne de production frites fraîches, ligne frites précuites, machine à frites industrielle, DELMA">
+    <title>DELMA ENGINEERING - Équipements pour la fabrication de frites</title>
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --light-gray: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), #d97706);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1200x600/f59e0b/FFFFFF?text=Production+de+Frites') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: #f0f2f5;
+        }
+        
+        .product-category {
+            margin-bottom: 60px;
+        }
+        
+        .product-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            text-align: center;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .product-content ul {
+            list-style: none;
+            margin: 15px 0;
+            color: var(--gray);
+        }
+        
+        .product-content ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .product-content ul li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), #d97706);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .benefit-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #f0f2f5;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), #d97706);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .map {
+            height: 300px;
+            background-color: #ddd;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>DELMA <span>ENGINEERING</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#coupe-frites">Coupe-Frites</a></li>
+                    <li><a href="#frites-fraiches">Frites Fraîches</a></li>
+                    <li><a href="#frites-precuites">Frites Précuites</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">Demandez votre devis gratuit</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h2>Solutions complètes pour la fabrication de frites fraîches et précuites</h2>
+            <p>Équipements industriels de haute performance pour la transformation de pommes de terre. Lignes complètes clé en main, certifiées CE, conçues pour les professionnels de l'agroalimentaire.</p>
+            <a href="#contact" class="cta-button">Obtenir un devis</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Expertise Européenne en Équipements pour Frites</h2>
+                <p>DELMA ENGINEERING conçoit et fabrique des lignes complètes de transformation de pommes de terre depuis plus de 20 ans. Nos solutions innovantes répondent aux besoins des industriels, transformateurs et restaurateurs exigeants.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://placehold.co/300x200/10b981/FFFFFF?text=Coupeuse+Industrielle')"></div>
+                    <div class="feature-content">
+                        <h3>Coupeuses de Frites Haute Performance</h3>
+                        <p>Nos machines coupent toujours les frites les plus longues possibles, minimisant ainsi le gaspillage et les petites chutes grâce à leur rotor breveté.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://placehold.co/300x200/f59e0b/FFFFFF?text=Ligne+de+Production')"></div>
+                    <div class="feature-content">
+                        <h3>Lignes Complètes Clé en Main</h3>
+                        <p>De l'épluchage à l'emballage, nous fournissons des solutions intégrées pour la production de frites fraîches et précuites.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://placehold.co/300x200/374151/FFFFFF?text=Certification+CE')"></div>
+                    <div class="feature-content">
+                        <h3>Conformité et Sécurité</h3>
+                        <p>Toutes nos machines sont certifiées CE, fabriquées en acier inoxydable AISI 304, avec les dernières normes de sécurité alimentaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="coupe-frites">
+        <div class="container">
+            <div class="product-category">
+                <h3>Coupe-Frites Industriels et Artisanaux</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/f59e0b/FFFFFF?text=Coupeuse+S.85')"></div>
+                        <div class="product-content">
+                            <h4>Coupeuse S.85 Électrique</h4>
+                            <p>Machinerie industrielle conçue pour couper des frites et/ou des tranches de pommes de terre.</p>
+                            <ul>
+                                <li>Capacité jusqu'à 3500 kg/h</li>
+                                <li>Rotor breveté pour frites plus longues</li>
+                                <li>Changement de couteaux en moins de 60 secondes</li>
+                                <li>Construction en acier inoxydable AISI 304</li>
+                                <li>Épaisseur réglable de 7 à 14 mm</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/10b981/FFFFFF?text=Coupeuse+Pneumatique')"></div>
+                        <div class="product-content">
+                            <h4>Coupeuse SLS Pneumatique</h4>
+                            <p>Version pneumatique entraînée par un compresseur, idéale pour les environnements sensibles à l'électricité.</p>
+                            <ul>
+                                <li>Capacité de 350 kg/h</li>
+                                <li>Fonctionne uniquement à l'air comprimé</li>
+                                <li>Sécurité maximale sans connexion électrique</li>
+                                <li>Porte de sécurité verrouillée</li>
+                                <li>Prix plus abordable que les versions électriques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frites Fraîches Section -->
+            <div class="product-category" id="frites-fraiches">
+                <h3>Équipement pour Frites Fraîches</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/8b5cf6/FFFFFF?text=Ligne+Fraîche')"></div>
+                        <div class="product-content">
+                            <h4>Ligne Complète Frites Fraîches</h4>
+                            <p>Solution intégrée pour la production de frites fraîches destinées au marché de la 4e gamme.</p>
+                            <ul>
+                                <li>Éplucheuses à haute performance</li>
+                                <li>Laveuses industrielles</li>
+                                <li>Coupeuses brevetées S.85</li>
+                                <li>Tri automatique des frites</li>
+                                <li>Conditionnement sous vide</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frites Précuites Section -->
+            <div class="product-category" id="frites-precuites">
+                <h3>Équipement pour Frites Précuites</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/06b6d4/FFFFFF?text=Ligne+Précuite')"></div>
+                        <div class="product-content">
+                            <h4>Ligne Innovante de Frites Précuites Blanchies à l'Eau</h4>
+                            <p>Technologie exclusive DELMA1 pour des frites précuites naturelles, sans friture préalable.</p>
+                            <ul>
+                                <li>Blanchissement à l'eau chaude (pas de friture)</li>
+                                <li>Conservation de 21 jours au réfrigérateur</li>
+                                <li>Sans agent de conservation</li>
+                                <li>Texture parfaite : croustillant extérieur, fondant intérieur</li>
+                                <li>Investissement : 100 000 € pour 350 kg/h</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Avantages des Frites Précuites Blanchies à l'Eau</h2>
+                <p>Notre procédé exclusif révolutionne la production de frites précuites avec des bénéfices économiques et qualitatifs exceptionnels.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">1</div>
+                    <h4>Texture Parfaite</h4>
+                    <p>Croustillantes à l'extérieur, fondantes à l'intérieur, avec une couleur dorée irréprochable.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">2</div>
+                    <h4>Longue Conservation</h4>
+                    <p>21 jours de conservation au réfrigérateur sans agents de conservation.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">3</div>
+                    <h4>Retour sur Investissement</h4>
+                    <p>Prix de vente jusqu'à 2,69 €/kg en Belgique contre 1,59 €/kg pour les frites classiques.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">4</div>
+                    <h4>Gain de Temps en Cuisine</h4>
+                    <p>Temps de cuisson réduit à 1-3 minutes, libérant jusqu'à 40 heures de travail par semaine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous pour un Devis Gratuit</h2>
+                <p>Nos experts sont à votre disposition pour vous conseiller sur la solution la plus adaptée à vos besoins de production.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>DELMA ENGINEERING</h3>
+                    <p><strong>Adresse :</strong> 123 Industrie Avenue, 59000 Lille, France</p>
+                    <p><strong>Téléphone :</strong> +33 (0)3 20 00 00 00</p>
+                    <p><strong>Email :</strong> contact@delma-engineering.fr</p>
+                    <p><strong>Horaires :</strong> Lundi-Vendredi 8h-18h</p>
+                    
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.338578888045!2d3.058596515697934!3d50.63338837951849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58357a5a797%3A0x40e6d7f9f8d8b8c!2sLille!5e0!3m2!1sfr!2sfr!4v1619821523456!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nom *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>DELMA ENGINEERING</h4>
+                    <p>Spécialiste de l'équipement pour la transformation de pommes de terre depuis 2001. Innovation, qualité et accompagnement au cœur de notre expertise.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Produits</h4>
+                    <ul>
+                        <li><a href="#coupe-frites">Coupe-Frites Industriels</a></li>
+                        <li><a href="#frites-fraiches">Lignes Frites Fraîches</a></li>
+                        <li><a href="#frites-precuites">Lignes Frites Précuites</a></li>
+                        <li><a href="#">Éplucheuses</a></li>
+                        <li><a href="#">Conditionneuses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Applications</h4>
+                    <ul>
+                        <li><a href="#">Industrie Agroalimentaire</a></li>
+                        <li><a href="#">Transformateurs de Pommes de Terre</a></li>
+                        <li><a href="#">Restauration Collective</a></li>
+                        <li><a href="#">Grands Comptes de la Restauration</a></li>
+                        <li><a href="#">Marché de la 4e Gamme</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+33320000000">+33 (0)3 20 00 00 00</a></li>
+                        <li><a href="mailto:contact@delma-engineering.fr">contact@delma-engineering.fr</a></li>
+                        <li><a href="#">Demander un devis</a></li>
+                        <li><a href="#">Documentation technique</a></li>
+                        <li><a href="#">Assistance après-vente</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 DELMA ENGINEERING. Tous droits réservés. | Certifié CE | Fabrication Européenne</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande. Nous vous répondrons dans les plus brefs délais.');
+            this.reset();
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card, .benefit-item').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DELMA ENGINEERING - Équipements industriels pour la fabrication de frites fraîches et précuites. Lignes complètes clé en main pour professionnels.">
-    <meta name="keywords" content="équipement frites, coupe-frites, ligne de production frites fraîches, ligne frites précuites, machine à frites industrielle, DELMA">
+    <meta name="description" content="DELMA ENGINEERING - Équipements industriels pour la fabrication de frites fraîches, précuites, chips, cubes et ondulées. Lignes complètes clé en main, certifiées CE.">
+    <meta name="keywords" content="équipement frites, coupe-frites, ligne de production frites, frites précuites, machine à frites industrielle, DELMA, cubeuse, chips, zigzag, SL105, VV PC 1500">
     <title>DELMA ENGINEERING - Équipements pour la fabrication de frites</title>
     <style>
         :root {
@@ -57,14 +57,11 @@
             gap: 10px;
         }
         
-        .logo h1 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: var(--primary);
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            margin-right: 10px;
         }
         
         nav ul {
@@ -98,6 +95,25 @@
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switch a {
+            color: var(--gray);
+            text-decoration: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            background-color: #f3f4f6;
+        }
+        
+        .lang-switch a.active {
+            background-color: var(--primary);
+            color: white;
         }
         
         /* Hero Section */
@@ -253,6 +269,57 @@
             left: 0;
         }
         
+        /* Video Section - Coupeuses */
+        .video-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        /* New Video Section - Ligne Précuite */
+        .video-section-precuite {
+            padding: 80px 0;
+            background-color: #f9fafb;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .youtube-button {
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+            background: #FF0000;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            width: fit-content;
+            transition: transform 0.3s;
+        }
+        
+        .youtube-button:hover {
+            transform: translateY(-2px);
+        }
+        
         /* Benefits Section */
         .benefits {
             padding: 80px 0;
@@ -374,14 +441,6 @@
             margin-top: 15px;
         }
         
-        .map {
-            height: 300px;
-            background-color: #ddd;
-            margin-top: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -460,7 +519,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>DELMA <span>ENGINEERING</span></h1>
+                <img src="https://i.imgur.com/1qYQJZT.png" alt="DELMA Logo">
             </div>
             <nav>
                 <ul>
@@ -468,19 +527,28 @@
                     <li><a href="#coupe-frites">Coupe-Frites</a></li>
                     <li><a href="#frites-fraiches">Frites Fraîches</a></li>
                     <li><a href="#frites-precuites">Frites Précuites</a></li>
+                    <li><a href="#chips">Chips</a></li>
+                    <li><a href="#video">Vidéos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="cta-button">Demandez votre devis gratuit</a>
+            <div class="lang-switch">
+                <a href="#" class="active" onclick="switchLanguage('fr'); return false;">FR</a>
+                <a href="#" onclick="switchLanguage('en'); return false;">EN</a>
+            </div>
+            <a href="#contact" class="cta-button">Devis Gratuit</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="container">
-            <h2>Solutions complètes pour la fabrication de frites fraîches et précuites</h2>
-            <p>Équipements industriels de haute performance pour la transformation de pommes de terre. Lignes complètes clé en main, certifiées CE, conçues pour les professionnels de l'agroalimentaire.</p>
+            <h2 class="fr">Solutions complètes pour la fabrication de frites fraîches, précuites, chips, cubes et ondulées</h2>
+            <h2 class="en" style="display:none">Complete solutions for fresh, pre-cooked fries, chips, cubes and wavy fries</h2>
+            <p class="fr">Équipements industriels de haute performance pour la transformation de pommes de terre. Lignes complètes clé en main, certifiées CE, conçues pour les professionnels de l'agroalimentaire.</p>
+            <p class="en" style="display:none">High-performance industrial equipment for potato processing. Complete turnkey lines, CE certified, designed for food industry professionals.</p>
             <a href="#contact" class="cta-button">Obtenir un devis</a>
+            <a href="#contact" class="cta-button" style="display:none">Get a quote</a>
         </div>
     </section>
 
@@ -488,32 +556,40 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Expertise Européenne en Équipements pour Frites</h2>
-                <p>DELMA ENGINEERING conçoit et fabrique des lignes complètes de transformation de pommes de terre depuis plus de 20 ans. Nos solutions innovantes répondent aux besoins des industriels, transformateurs et restaurateurs exigeants.</p>
+                <h2 class="fr">Expertise Européenne en Équipements pour Frites</h2>
+                <h2 class="en" style="display:none">European Expertise in Fry Equipment</h2>
+                <p class="fr">DELMA ENGINEERING conçoit et fabrique des lignes complètes de transformation de pommes de terre depuis plus de 20 ans. Nos solutions innovantes répondent aux besoins des industriels, transformateurs et restaurateurs exigeants.</p>
+                <p class="en" style="display:none">DELMA ENGINEERING designs and manufactures complete potato processing lines for over 20 years. Our innovative solutions meet the needs of demanding industrialists, processors and restaurateurs.</p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-img" style="background-image: url('https://placehold.co/300x200/10b981/FFFFFF?text=Coupeuse+Industrielle')"></div>
                     <div class="feature-content">
-                        <h3>Coupeuses de Frites Haute Performance</h3>
-                        <p>Nos machines coupent toujours les frites les plus longues possibles, minimisant ainsi le gaspillage et les petites chutes grâce à leur rotor breveté.</p>
+                        <h3 class="fr">Coupeuses de Frites Haute Performance</h3>
+                        <h3 class="en" style="display:none">High-Performance Fry Cutters</h3>
+                        <p class="fr">Nos machines coupent toujours les frites les plus longues possibles, minimisant ainsi le gaspillage et les petites chutes grâce à leur rotor breveté.</p>
+                        <p class="en" style="display:none">Our machines always cut the longest possible fries, minimizing waste and small cuts thanks to their patented rotor.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-img" style="background-image: url('https://placehold.co/300x200/f59e0b/FFFFFF?text=Ligne+de+Production')"></div>
                     <div class="feature-content">
-                        <h3>Lignes Complètes Clé en Main</h3>
-                        <p>De l'épluchage à l'emballage, nous fournissons des solutions intégrées pour la production de frites fraîches et précuites.</p>
+                        <h3 class="fr">Lignes Complètes Clé en Main</h3>
+                        <h3 class="en" style="display:none">Complete Turnkey Lines</h3>
+                        <p class="fr">De l'épluchage à l'emballage, nous fournissons des solutions intégrées pour la production de frites fraîches et précuites.</p>
+                        <p class="en" style="display:none">From peeling to packaging, we provide integrated solutions for fresh and pre-cooked fry production.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-img" style="background-image: url('https://placehold.co/300x200/374151/FFFFFF?text=Certification+CE')"></div>
                     <div class="feature-content">
-                        <h3>Conformité et Sécurité</h3>
-                        <p>Toutes nos machines sont certifiées CE, fabriquées en acier inoxydable AISI 304, avec les dernières normes de sécurité alimentaire.</p>
+                        <h3 class="fr">Conformité et Sécurité</h3>
+                        <h3 class="en" style="display:none">Compliance and Safety</h3>
+                        <p class="fr">Toutes nos machines sont certifiées CE, fabriquées en acier inoxydable AISI 304, avec les dernières normes de sécurité alimentaire.</p>
+                        <p class="en" style="display:none">All our machines are CE certified, made of AISI 304 stainless steel, with the latest food safety standards.</p>
                     </div>
                 </div>
             </div>
@@ -524,19 +600,26 @@
     <section class="products" id="coupe-frites">
         <div class="container">
             <div class="product-category">
-                <h3>Coupe-Frites Industriels et Artisanaux</h3>
+                <h3 class="fr">Coupe-Frites Industriels et Artisanaux</h3>
+                <h3 class="en" style="display:none">Industrial and Artisanal Fry Cutters</h3>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-img" style="background-image: url('https://placehold.co/300x200/f59e0b/FFFFFF?text=Coupeuse+S.85')"></div>
                         <div class="product-content">
                             <h4>Coupeuse S.85 Électrique</h4>
-                            <p>Machinerie industrielle conçue pour couper des frites et/ou des tranches de pommes de terre.</p>
+                            <p class="fr">Machinerie industrielle conçue pour couper des frites et/ou des tranches de pommes de terre.</p>
+                            <p class="en" style="display:none">Industrial machinery designed to cut fries and/or potato slices.</p>
                             <ul>
-                                <li>Capacité jusqu'à 3500 kg/h</li>
-                                <li>Rotor breveté pour frites plus longues</li>
-                                <li>Changement de couteaux en moins de 60 secondes</li>
-                                <li>Construction en acier inoxydable AISI 304</li>
-                                <li>Épaisseur réglable de 7 à 14 mm</li>
+                                <li class="fr">Capacité jusqu'à 3500 kg/h</li>
+                                <li class="en" style="display:none">Capacity up to 3500 kg/h</li>
+                                <li class="fr">Rotor breveté pour frites plus longues</li>
+                                <li class="en" style="display:none">Patented rotor for longer fries</li>
+                                <li class="fr">Changement de couteaux en moins de 60 secondes</li>
+                                <li class="en" style="display:none">Knife change in less than 60 seconds</li>
+                                <li class="fr">Construction en acier inoxydable AISI 304</li>
+                                <li class="en" style="display:none">AISI 304 stainless steel construction</li>
+                                <li class="fr">Épaisseur réglable de 7 à 14 mm</li>
+                                <li class="en" style="display:none">Adjustable thickness from 7 to 14 mm</li>
                             </ul>
                         </div>
                     </div>
@@ -545,13 +628,124 @@
                         <div class="product-img" style="background-image: url('https://placehold.co/300x200/10b981/FFFFFF?text=Coupeuse+Pneumatique')"></div>
                         <div class="product-content">
                             <h4>Coupeuse SLS Pneumatique</h4>
-                            <p>Version pneumatique entraînée par un compresseur, idéale pour les environnements sensibles à l'électricité.</p>
+                            <p class="fr">Version pneumatique entraînée par un compresseur, idéale pour les environnements sensibles à l'électricité.</p>
+                            <p class="en" style="display:none">Pneumatic version driven by a compressor, ideal for environments sensitive to electricity.</p>
                             <ul>
-                                <li>Capacité de 350 kg/h</li>
-                                <li>Fonctionne uniquement à l'air comprimé</li>
-                                <li>Sécurité maximale sans connexion électrique</li>
-                                <li>Porte de sécurité verrouillée</li>
-                                <li>Prix plus abordable que les versions électriques</li>
+                                <li class="fr">Capacité de 350 kg/h</li>
+                                <li class="en" style="display:none">Capacity 350 kg/h</li>
+                                <li class="fr">Fonctionne uniquement à l'air comprimé</li>
+                                <li class="en" style="display:none">Operates only on compressed air</li>
+                                <li class="fr">Sécurité maximale sans connexion électrique</li>
+                                <li class="en" style="display:none">Maximum safety without electrical connection</li>
+                                <li class="fr">Porte de sécurité verrouillée</li>
+                                <li class="en" style="display:none">Locked safety door</li>
+                                <li class="fr">Prix plus abordable que les versions électriques</li>
+                                <li class="en" style="display:none">More affordable than electric versions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/8b5cf6/FFFFFF?text=Coupeuse+SL200')"></div>
+                        <div class="product-content">
+                            <h4>Coupeuse Pneumatique SL200</h4>
+                            <p class="fr">Idéale pour couper pommes de terre, carottes, légumes en bâtonnets (5-25mm) ou quartiers.</p>
+                            <p class="en" style="display:none">Ideal for cutting potatoes, carrots, vegetables into sticks (5-25mm) or quarters.</p>
+                            <ul>
+                                <li class="fr">Capacité : +300 kg/h</li>
+                                <li class="en" style="display:none">Capacity: +300 kg/h</li>
+                                <li class="fr">Diamètre max produit : 105 mm</li>
+                                <li class="en" style="display:none">Max product diameter: 105 mm</li>
+                                <li class="fr">Longueur max : 200 mm</li>
+                                <li class="en" style="display:none">Max length: 200 mm</li>
+                                <li class="fr">Consommation air : 150 L/min</li>
+                                <li class="en" style="display:none">Air consumption: 150 L/min</li>
+                                <li class="fr">Matériaux : inox + plastique alimentaire</li>
+                                <li class="en" style="display:none">Materials: stainless steel + food-grade plastic</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/06b6d4/FFFFFF?text=Cubeuse+CD1500')"></div>
+                        <div class="product-content">
+                            <h4>Cubeuse CD1500 XL</h4>
+                            <p class="fr">Pour la production de cubes de pommes de terre, oignons, légumes.</p>
+                            <p class="en" style="display:none">For the production of potato, onion, vegetable cubes.</p>
+                            <ul>
+                                <li class="fr">Capacité : jusqu'à 1500 kg/h</li>
+                                <li class="en" style="display:none">Capacity: up to 1500 kg/h</li>
+                                <li class="fr">Taille cubes réglable</li>
+                                <li class="en" style="display:none">Adjustable cube size</li>
+                                <li class="fr">Construction tout inox AISI 304</li>
+                                <li class="en" style="display:none">Full AISI 304 stainless steel construction</li>
+                                <li class="fr">Système de sécurité magnétique</li>
+                                <li class="en" style="display:none">Magnetic safety system</li>
+                                <li class="fr">Facile à nettoyer et entretenir</li>
+                                <li class="en" style="display:none">Easy to clean and maintain</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/14b8a6/FFFFFF?text=Coupeuse+SL105')"></div>
+                        <div class="product-content">
+                            <h4>Coupeuse SL-105 + Trieuse SR2</h4>
+                            <p class="fr">Solution complète : coupeuse haute performance + trieuse automatique pour éliminer les chutes.</p>
+                            <p class="en" style="display:none">Complete solution: high-performance cutter + automatic sorter to remove waste.</p>
+                            <ul>
+                                <li class="fr">Capacité : +2500 kg/h</li>
+                                <li class="en" style="display:none">Capacity: +2500 kg/h</li>
+                                <li class="fr">Diamètre produit : 35-105 mm</li>
+                                <li class="en" style="display:none">Product diameter: 35-105 mm</li>
+                                <li class="fr">Épaisseur frites : 7-17 mm</li>
+                                <li class="en" style="display:none">Fry thickness: 7-17 mm</li>
+                                <li class="fr">Trieuse SR2 réglable 3-23 mm</li>
+                                <li class="en" style="display:none">Sorter SR2 adjustable 3-23 mm</li>
+                                <li class="fr">Alimentation continue, Plug & Play</li>
+                                <li class="en" style="display:none">Continuous feed, Plug & Play</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/8b5cf6/FFFFFF?text=Frite+Ondulée')"></div>
+                        <div class="product-content">
+                            <h4>Coupeuse Zigzag 500C</h4>
+                            <p class="fr">Pour frites ondulées, lisses ou cubes. Idéal pour chips et snacks.</p>
+                            <p class="en" style="display:none">For wavy, straight or cubed fries. Ideal for chips and snacks.</p>
+                            <ul>
+                                <li class="fr">Capacité : 800-3000 kg/h</li>
+                                <li class="en" style="display:none">Capacity: 800-3000 kg/h</li>
+                                <li class="fr">Épaisseurs : 8,5 / 10,5 / 12,5 / 15,5 mm</li>
+                                <li class="en" style="display:none">Thicknesses: 8.5 / 10.5 / 12.5 / 15.5 mm</li>
+                                <li class="fr">Puissance : 1,5 kW (220/380V)</li>
+                                <li class="en" style="display:none">Power: 1.5 kW (220/380V)</li>
+                                <li class="fr">Poids : 282 kg</li>
+                                <li class="en" style="display:none">Weight: 282 kg</li>
+                                <li class="fr">Prix spécial : 17 000 € (couteau inclus)</li>
+                                <li class="en" style="display:none">Special price: 17,000 € (knife included)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/06b6d4/FFFFFF?text=Trieuse+Vibrante')"></div>
+                        <div class="product-content">
+                            <h4>Trieuse à Plateau Vibrant VV PC 1500</h4>
+                            <p class="fr">Sépare les petites chutes de frites (à partir de 6 mm).</p>
+                            <p class="en" style="display:none">Separates small fry waste (from 6 mm).</p>
+                            <ul>
+                                <li class="fr">Dimensions : 1500x400 mm</li>
+                                <li class="en" style="display:none">Dimensions: 1500x400 mm</li>
+                                <li class="fr">Puissance : 0,27 kW, 220V triphasé</li>
+                                <li class="en" style="display:none">Power: 0.27 kW, 220V three-phase</li>
+                                <li class="fr">Poids : 80 kg</li>
+                                <li class="en" style="display:none">Weight: 80 kg</li>
+                                <li class="fr">Tiges Ø10 mm espacées de 6 mm</li>
+                                <li class="en" style="display:none">Rods Ø10 mm spaced 6 mm apart</li>
+                                <li class="fr">Bac de récupération des déchets</li>
+                                <li class="en" style="display:none">Waste collection tray</li>
                             </ul>
                         </div>
                     </div>
@@ -560,19 +754,30 @@
 
             <!-- Frites Fraîches Section -->
             <div class="product-category" id="frites-fraiches">
-                <h3>Équipement pour Frites Fraîches</h3>
+                <h3 class="fr">Ligne Complète Frites Fraîches</h3>
+                <h3 class="en" style="display:none">Complete Fresh Fry Line</h3>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-img" style="background-image: url('https://placehold.co/300x200/8b5cf6/FFFFFF?text=Ligne+Fraîche')"></div>
                         <div class="product-content">
-                            <h4>Ligne Complète Frites Fraîches</h4>
-                            <p>Solution intégrée pour la production de frites fraîches destinées au marché de la 4e gamme.</p>
+                            <h4>Équipements Clé en Main</h4>
+                            <p class="fr">Solution intégrée pour la production de frites fraîches destinées au marché de la 4e gamme.</p>
+                            <p class="en" style="display:none">Integrated solution for fresh fry production for the 4th range market.</p>
                             <ul>
-                                <li>Éplucheuses à haute performance</li>
-                                <li>Laveuses industrielles</li>
-                                <li>Coupeuses brevetées S.85</li>
-                                <li>Tri automatique des frites</li>
-                                <li>Conditionnement sous vide</li>
+                                <li class="fr">Trémie d'alimentation TL2600</li>
+                                <li class="en" style="display:none">Feeding hopper TL2600</li>
+                                <li class="fr">Éplucheuse abrasive PLT-800 (1000 kg/h)</li>
+                                <li class="en" style="display:none">Abrasive peeler PLT-800 (1000 kg/h)</li>
+                                <li class="fr">Laveuse-épierreuse LD2600</li>
+                                <li class="en" style="display:none">Washer-de-stoner LD2600</li>
+                                <li class="fr">Ruban de traitement CT2800</li>
+                                <li class="en" style="display:none">Treatment conveyor CT2800</li>
+                                <li class="fr">Convoyeur de séchage CS1EX</li>
+                                <li class="en" style="display:none">Drying conveyor CS1EX</li>
+                                <li class="fr">Convoyeur vibrant VV PC1500</li>
+                                <li class="en" style="display:none">Vibrating conveyor VV PC1500</li>
+                                <li class="fr">Pesage et conditionnement</li>
+                                <li class="en" style="display:none">Weighing and packaging</li>
                             </ul>
                         </div>
                     </div>
@@ -581,19 +786,56 @@
 
             <!-- Frites Précuites Section -->
             <div class="product-category" id="frites-precuites">
-                <h3>Équipement pour Frites Précuites</h3>
+                <h3 class="fr">Ligne Innovante de Frites Précuites Blanchies à l'Eau</h3>
+                <h3 class="en" style="display:none">Innovative Pre-Cooked Fry Line Blanched in Water</h3>
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-img" style="background-image: url('https://placehold.co/300x200/06b6d4/FFFFFF?text=Ligne+Précuite')"></div>
                         <div class="product-content">
-                            <h4>Ligne Innovante de Frites Précuites Blanchies à l'Eau</h4>
-                            <p>Technologie exclusive DELMA1 pour des frites précuites naturelles, sans friture préalable.</p>
+                            <h4>Ligne Complète Frites Précuites</h4>
+                            <p class="fr">Technologie exclusive DELMA1 pour des frites précuites naturelles, sans friture préalable.</p>
+                            <p class="en" style="display:none">Exclusive DELMA1 technology for natural pre-cooked fries, without prior frying.</p>
                             <ul>
-                                <li>Blanchissement à l'eau chaude (pas de friture)</li>
-                                <li>Conservation de 21 jours au réfrigérateur</li>
-                                <li>Sans agent de conservation</li>
-                                <li>Texture parfaite : croustillant extérieur, fondant intérieur</li>
-                                <li>Investissement : 100 000 € pour 350 kg/h</li>
+                                <li class="fr">Blanchissement à l'eau chaude (pas de friture)</li>
+                                <li class="en" style="display:none">Blanching in hot water (no frying)</li>
+                                <li class="fr">Conservation de 21 jours au réfrigérateur</li>
+                                <li class="en" style="display:none">21 days refrigerated shelf life</li>
+                                <li class="fr">Sans agent de conservation</li>
+                                <li class="en" style="display:none">No preservatives</li>
+                                <li class="fr">Texture parfaite : croustillant extérieur, fondant intérieur</li>
+                                <li class="en" style="display:none">Perfect texture: crispy outside, tender inside</li>
+                                <li class="fr">Investissement : 100 000 € pour 350 kg/h</li>
+                                <li class="en" style="display:none">Investment: 100,000 € for 350 kg/h</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chips Section -->
+            <div class="product-category" id="chips">
+                <h3 class="fr">Ligne Complète Chips</h3>
+                <h3 class="en" style="display:none">Complete Chips Line</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img" style="background-image: url('https://placehold.co/300x200/14b8a6/FFFFFF?text=Chips+Line')"></div>
+                        <div class="product-content">
+                            <h4>Équipements pour Chips</h4>
+                            <p class="fr">Ligne complète pour la production de chips, galettes, pellets et produits frits.</p>
+                            <p class="en" style="display:none">Complete line for chip, wafer, pellet and fried product production.</p>
+                            <ul>
+                                <li class="fr">Trancheuse industrielle CT-420 (1500 kg/h)</li>
+                                <li class="en" style="display:none">Industrial slicer CT-420 (1500 kg/h)</li>
+                                <li class="fr">Friteuses à chaudron basculant FPT-XXXX</li>
+                                <li class="en" style="display:none">Tilting vat fryers FPT-XXXX</li>
+                                <li class="fr">Friteuses continues grandes capacités</li>
+                                <li class="en" style="display:none">Continuous fryers, high capacity</li>
+                                <li class="fr">Égoutteur vibrant ZRT / VRT</li>
+                                <li class="en" style="display:none">Vibrating drainer ZRT / VRT</li>
+                                <li class="fr">Salière / Aromatiseur électrostatique</li>
+                                <li class="en" style="display:none">Salt / Electrostatic flavorer</li>
+                                <li class="fr">Systèmes de filtration d'huile</li>
+                                <li class="en" style="display:none">Oil filtration systems</li>
                             </ul>
                         </div>
                     </div>
@@ -602,37 +844,68 @@
         </div>
     </section>
 
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fr">Découvrez nos Machines en Action</h2>
+                <h2 class="en" style="display:none">Discover Our Machines in Action</h2>
+                <p class="fr">Explorez notre chaîne YouTube pour des démonstrations, montages et applications réelles.</p>
+                <p class="en" style="display:none">Explore our YouTube channel for demonstrations, setups and real applications.</p>
+            </div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/7Gw0k5HyrXc?si=YbFBvgo8xfWDZTCv&listType=playlist" 
+                    title="Playlist DELMA1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <a href="https://www.youtube.com/@delma1" target="_blank" class="youtube-button">👉 S'abonner sur YouTube</a>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
             <div class="section-title">
-                <h2>Avantages des Frites Précuites Blanchies à l'Eau</h2>
-                <p>Notre procédé exclusif révolutionne la production de frites précuites avec des bénéfices économiques et qualitatifs exceptionnels.</p>
+                <h2 class="fr">Avantages des Frites Précuites Blanchies à l'Eau</h2>
+                <h2 class="en" style="display:none">Benefits of Water-Blanched Pre-Cooked Fries</h2>
+                <p class="fr">Notre procédé exclusif révolutionne la production de frites précuites avec des bénéfices économiques et qualitatifs exceptionnels.</p>
+                <p class="en" style="display:none">Our exclusive process revolutionizes pre-cooked fry production with exceptional economic and quality benefits.</p>
             </div>
             
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <div class="benefit-icon">1</div>
-                    <h4>Texture Parfaite</h4>
-                    <p>Croustillantes à l'extérieur, fondantes à l'intérieur, avec une couleur dorée irréprochable.</p>
+                    <h4 class="fr">Texture Parfaite</h4>
+                    <h4 class="en" style="display:none">Perfect Texture</h4>
+                    <p class="fr">Croustillantes à l'extérieur, fondantes à l'intérieur, avec une couleur dorée irréprochable.</p>
+                    <p class="en" style="display:none">Crispy outside, tender inside, with a perfect golden color.</p>
                 </div>
                 
                 <div class="benefit-item">
                     <div class="benefit-icon">2</div>
-                    <h4>Longue Conservation</h4>
-                    <p>21 jours de conservation au réfrigérateur sans agents de conservation.</p>
+                    <h4 class="fr">Longue Conservation</h4>
+                    <h4 class="en" style="display:none">Long Shelf Life</h4>
+                    <p class="fr">21 jours de conservation au réfrigérateur sans agents de conservation.</p>
+                    <p class="en" style="display:none">21 days refrigerated shelf life without preservatives.</p>
                 </div>
                 
                 <div class="benefit-item">
                     <div class="benefit-icon">3</div>
-                    <h4>Retour sur Investissement</h4>
-                    <p>Prix de vente jusqu'à 2,69 €/kg en Belgique contre 1,59 €/kg pour les frites classiques.</p>
+                    <h4 class="fr">Retour sur Investissement</h4>
+                    <h4 class="en" style="display:none">Return on Investment</h4>
+                    <p class="fr">Prix de vente jusqu'à 2,69 €/kg en Belgique contre 1,59 €/kg pour les frites classiques.</p>
+                    <p class="en" style="display:none">Selling price up to 2.69 €/kg in Belgium vs 1.59 €/kg for classic fries.</p>
                 </div>
                 
                 <div class="benefit-item">
                     <div class="benefit-icon">4</div>
-                    <h4>Gain de Temps en Cuisine</h4>
-                    <p>Temps de cuisson réduit à 1-3 minutes, libérant jusqu'à 40 heures de travail par semaine.</p>
+                    <h4 class="fr">Gain de Temps en Cuisine</h4>
+                    <h4 class="en" style="display:none">Time Savings in Kitchen</h4>
+                    <p class="fr">Temps de cuisson réduit à 1-3 minutes, libérant jusqu'à 40 heures de travail par semaine.</p>
+                    <p class="en" style="display:none">Cooking time reduced to 1-3 minutes, freeing up to 40 hours of work per week.</p>
                 </div>
             </div>
         </div>
@@ -642,52 +915,57 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contactez-nous pour un Devis Gratuit</h2>
-                <p>Nos experts sont à votre disposition pour vous conseiller sur la solution la plus adaptée à vos besoins de production.</p>
+                <h2 class="fr">Contactez-nous pour un Devis Gratuit</h2>
+                <h2 class="en" style="display:none">Contact Us for a Free Quote</h2>
+                <p class="fr">Nos experts sont à votre disposition pour vous conseiller sur la solution la plus adaptée à vos besoins de production.</p>
+                <p class="en" style="display:none">Our experts are at your disposal to advise you on the best solution for your production needs.</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>DELMA ENGINEERING</h3>
-                    <p><strong>Adresse :</strong> Pôle Technologique, Tunisie</p>
-                    <p><strong>Téléphone et WhatsApp :</strong> +216 95 16 12 77</p>
-                    <p><strong>Email :</strong> export@delma1.com</p>
-                    <p><strong>Horaires :</strong> Lundi-Vendredi 8h-18h</p>
-                    
-                    <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127574.7088870895!2d10.076402399999999!3d36.8009497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd33a67b3c966f%3A0x8a4eab47a35e35eb!2sP%C3%B4le%20Technologique%20de%20Sidi%20Thabet!5e0!3m2!1sfr!2sfr!4v1718000000000!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                    <p><strong class="fr">Adresse：</strong><strong class="en" style="display:none">Address:</strong> Pôle Technologique</p>
+                    <p><strong class="fr">Téléphone et WhatsApp：</strong><strong class="en" style="display:none">Phone & WhatsApp:</strong> +216 95 16 12 77</p>
+                    <p><strong class="fr">Email：</strong><strong class="en" style="display:none">Email:</strong> export@delma1.com</p>
+                    <p><strong class="fr">Horaires：</strong><strong class="en" style="display:none">Hours:</strong> Lundi-Vendredi 8h-18h</p>
                 </div>
                 
                 <div class="contact-form">
                     <form action="https://formspree.io/f/mwpnbwwd" method="POST">
                         <div class="form-group">
-                            <label for="name">Nom *</label>
+                            <label for="name" class="fr">Nom *</label>
+                            <label for="name" class="en" style="display:none">Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="company">Entreprise</label>
+                            <label for="company" class="fr">Entreprise</label>
+                            <label for="company" class="en" style="display:none">Company</label>
                             <input type="text" id="company" name="company">
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email" class="fr">Email *</label>
+                            <label for="email" class="en" style="display:none">Email *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Téléphone</label>
+                            <label for="phone" class="fr">Téléphone</label>
+                            <label for="phone" class="en" style="display:none">Phone</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message *</label>
+                            <label for="message" class="fr">Message *</label>
+                            <label for="message" class="en" style="display:none">Message *</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         
                         <button type="submit" class="submit-btn">Envoyer ma demande</button>
+                        <button type="submit" class="submit-btn" style="display:none">Send my request</button>
                         <p class="success-message">Merci ! Votre message a été envoyé avec succès.</p>
+                        <p class="success-message" style="display:none">Thank you! Your message has been sent successfully.</p>
                     </form>
                 </div>
             </div>
@@ -700,22 +978,26 @@
             <div class="footer-container">
                 <div class="footer-column">
                     <h4>DELMA ENGINEERING</h4>
-                    <p>Spécialiste de l'équipement pour la transformation de pommes de terre depuis 2001. Innovation, qualité et accompagnement au cœur de notre expertise.</p>
+                    <p class="fr">Spécialiste de l'équipement pour la transformation de pommes de terre depuis 2001. Innovation, qualité et accompagnement au cœur de notre expertise.</p>
+                    <p class="en" style="display:none">Specialist in potato processing equipment since 2001. Innovation, quality and support at the heart of our expertise.</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Produits</h4>
+                    <h4 class="fr">Produits</h4>
+                    <h4 class="en" style="display:none">Products</h4>
                     <ul>
-                        <li><a href="#coupe-frites">Coupe-Frites Industriels</a></li>
-                        <li><a href="#frites-fraiches">Lignes Frites Fraîches</a></li>
-                        <li><a href="#frites-precuites">Lignes Frites Précuites</a></li>
+                        <li><a href="#coupe-frites">Coupe-Frites</a></li>
+                        <li><a href="#frites-fraiches">Frites Fraîches</a></li>
+                        <li><a href="#frites-precuites">Frites Précuites</a></li>
+                        <li><a href="#chips">Chips</a></li>
                         <li><a href="#">Éplucheuses</a></li>
                         <li><a href="#">Conditionneuses</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Applications</h4>
+                    <h4 class="fr">Applications</h4>
+                    <h4 class="en" style="display:none">Applications</h4>
                     <ul>
                         <li><a href="#">Industrie Agroalimentaire</a></li>
                         <li><a href="#">Transformateurs de Pommes de Terre</a></li>
@@ -726,7 +1008,8 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Contact</h4>
+                    <h4 class="fr">Contact</h4>
+                    <h4 class="en" style="display:none">Contact</h4>
                     <ul>
                         <li><a href="tel:+21695161277">+216 95 16 12 77</a></li>
                         <li><a href="mailto:export@delma1.com">export@delma1.com</a></li>
@@ -744,6 +1027,20 @@
     </footer>
 
     <script>
+        // Language switcher
+        function switchLanguage(lang) {
+            document.querySelectorAll('.fr').forEach(el => {
+                el.style.display = lang === 'fr' ? 'block' : 'none';
+            });
+            document.querySelectorAll('.en').forEach(el => {
+                el.style.display = lang === 'en' ? 'block' : 'none';
+            });
+            document.querySelectorAll('.lang-switch a').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.lang-switch a')[lang === 'fr' ? 0 : 1].classList.add('active');
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -759,7 +1056,7 @@
         });
 
         // Success message after form submission
-        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function(e) {
             const successMessage = document.querySelector('.success-message');
             successMessage.style.display = 'block';
             setTimeout(() => {

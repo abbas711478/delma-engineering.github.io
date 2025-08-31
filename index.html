@@ -365,6 +365,14 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
         }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 15px;
+        }
         
         .map {
             height: 300px;
@@ -641,44 +649,45 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>DELMA ENGINEERING</h3>
-                    <p><strong>Adresse :</strong>Pôle Technologique, </p>
-                    <p><strong>Téléphone et WhatsAppp :</strong> +216 95 16 12 77</p>
+                    <p><strong>Adresse :</strong> Pôle Technologique, Tunisie</p>
+                    <p><strong>Téléphone et WhatsApp :</strong> +216 95 16 12 77</p>
                     <p><strong>Email :</strong> export@delma1.com</p>
                     <p><strong>Horaires :</strong> Lundi-Vendredi 8h-18h</p>
                     
                     <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.338578888045!2d3.058596515697934!3d50.63338837951849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58357a5a797%3A0x40e6d7f9f8d8b8c!2sLille!5e0!3m2!1sfr!2sfr!4v1619821523456!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127574.7088870895!2d10.076402399999999!3d36.8009497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd33a67b3c966f%3A0x8a4eab47a35e35eb!2sP%C3%B4le%20Technologique%20de%20Sidi%20Thabet!5e0!3m2!1sfr!2sfr!4v1718000000000!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/mwpnbwwd" method="POST">
                         <div class="form-group">
                             <label for="name">Nom *</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="company">Entreprise</label>
-                            <input type="text" id="company">
+                            <input type="text" id="company" name="company">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone">
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         
                         <button type="submit" class="submit-btn">Envoyer ma demande</button>
+                        <p class="success-message">Merci ! Votre message a été envoyé avec succès.</p>
                     </form>
                 </div>
             </div>
@@ -719,8 +728,8 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+2169561277">+216 95161277</a></li>
-                        <li><a href="mailto:contact@delma-engineering.fr">export@delma1.com</a></li>
+                        <li><a href="tel:+21695161277">+216 95 16 12 77</a></li>
+                        <li><a href="mailto:export@delma1.com">export@delma1.com</a></li>
                         <li><a href="#">Demander un devis</a></li>
                         <li><a href="#">Documentation technique</a></li>
                         <li><a href="#">Assistance après-vente</a></li>
@@ -749,18 +758,17 @@
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre demande. Nous vous répondrons dans les plus brefs délais.');
-            this.reset();
+        // Success message after form submission
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            const successMessage = document.querySelector('.success-message');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
         });
 
         // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
